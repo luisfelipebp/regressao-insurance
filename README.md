@@ -33,50 +33,82 @@ Este projeto avalia o desempenho de 6 algoritmos de regressão para prever o val
 `LinearRegression()`
 
 **Resultados:**
-- R² (treino/teste): *aprox. 0.74 / 0.72*
+- R² (treino/teste): *aprox. 0.61 / 0.62*
+- Validação cruzada (15 folds): 61.26%
+- RMSE (Raiz do erro quadrático médio): 7380.55
 
-### 2. Support Vector Regression (SVR)
+### 2. Regressão Linear Múltipla
 
-`SVR()`
+`LinearRegression()`
 
 **Resultados:**
-- R² (treino/teste): *aprox. 0.68 / 0.65*
+- R² (treino/teste): *aprox. 0.74 / 0.75*
+- Validação cruzada (15 folds): 74.44%
+- RMSE (Raiz do erro quadrático médio): 6017.57
+- 
+### 3. Support Vector Regression (SVR)
 
-### 3. Árvore de Decisão
+`SVR(kernel='rbf')`
+
+**Resultados:**
+- R² (treino/teste): *aprox. 0.86 / 0.84*
+- Validação cruzada (15 folds): 84.46%
+- RMSE (Raiz do erro quadrático médio): 4792.53
+
+### 4. Árvore de Decisão
 
 `DecisionTreeRegressor(max_depth=4, random_state=7)`
 
 **Resultados:**
-- R² (treino/teste): *aprox. 0.81 / 0.78*
+- R² (treino/teste): *aprox. 0.87 / 0.85*
+- Validação cruzada (15 folds): 84.98%
+- RMSE (Raiz do erro quadrático médio): 4647.72
 
-### 4. Random Forest
+### 5. Random Forest
 
-`RandomForestRegressor(max_depth=5, n_estimators=50, random_state=7)`
+`RandomForestRegressor(n_estimators=50, criterion='squared_error', max_depth=5, random_state = 7)`
 
 **Resultados:**
-- R² (treino/teste): *aprox. 0.85 / 0.83*
+- R² (treino/teste): *aprox. 0.89 / 0.85*
+- Validação cruzada (15 folds):  85.23%
+- RMSE (Raiz do erro quadrático médio): 4668.64
 - 
-### 5. XGBoost
+### 6. XGBoost
 
-`XGBRegressor(max_depth=4, n_estimators=140, learning_rate=0.05)`
-
-**Resultados:**
-- R² (treino/teste): *aprox. 0.88 / 0.86*
-
-### 6. LightGBM
-
-`LGBMRegressor(max_depth=4, n_estimators=50, num_leaves=50, random_state=7)`
+`XGBRegressor(n_estimators=140, max_depth=4, learning_rate=0.05, objective="reg:squarederror", random_state=7)`
 
 **Resultados:**
-- R² (treino/teste): *aprox. 0.89 / 0.87*
+- R² (treino/teste): *aprox. 0.91 / 0.85
+- Validação cruzada (15 folds): 85.85%
+- RMSE (Raiz do erro quadrático médio): 4621.63
+
+### 7. LightGBM
+
+LGBMRegressor(num_leaves=50, max_depth=4, learning_rate=0.1, n_estimators=50, random_state=7)`
+
+**Resultados:**
+- R² (treino/teste): *aprox. 0.89 / 0.84*
+- Validação cruzada (15 folds): 85.91%
+- RMSE (Raiz do erro quadrático médio): 4782.14
+
+### 8. CATBOOST
+
+`CatBoostRegressor (iterations=230, learning_rate=0.05, depth = 6, random_state = 7, verbose=False)`
+
+**Resultados:**
+- R² (treino/teste): *aprox. 0.91 / 0.85*
+- Validação cruzada (15 folds): 85.57%
+- RMSE (Raiz do erro quadrático médio): 4594.31
+
 
 ## 🏆 Conclusões Principais
 
 | Modelo            | R² Treino/Teste    |
 |-------------------|--------------------|
-| **LightGBM**      | 0.89 / 0.87 🥇     | 
-| **XGBoost**       | 0.88 / 0.86 🥈     | 
-| **Random Forest** | 0.85 / 0.83 🥉     |
+| **CATBOOST**      | 0.91 / 0.85 🥇     | 
+| **LightGBM**      | 0.89 / 0.84 🥈     | 
+| **XGBoost**       | 0.91 / 0.85 🥉     | 
+| **Random Forest** | 0.85 / 0.83        |
 | **Árvore Decisão**| 0.81 / 0.78        | 
 | **Regressão Linear** | 0.74 / 0.72      | 
 | **SVR**           | 0.68 / 0.65        | 
