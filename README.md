@@ -81,7 +81,7 @@ Este projeto avalia o desempenho de 6 algoritmos de regressão para prever o val
 | **Regressão Linear** | 0.74 / 0.72      | 
 | **SVR**           | 0.68 / 0.65        | 
 
-**Principais Insights:**
+**Principais Observações:**
 - A variável `smoker` apresenta a maior correlação positiva com o custo do seguro.
 - Idade (`age`) e IMC (`bmi`) também influenciam significativamente os custos.
 - Modelos ensemble (Random Forest, XGBoost, LightGBM) apresentaram melhor capacidade de generalização.
